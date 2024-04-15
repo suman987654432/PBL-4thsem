@@ -65,7 +65,7 @@ function Hero() {
             <div className="max-w-full absolute top-[50%] md:left-0 md:top-[65%] text-start transform -translate-y-1/2 ml-8 md:ml-12 text-white">
                 <h1 className="h1 mb-6 pointer-events-none">Where Trends Merge,<br className="hidden md:block" /> Style Emerges.</h1>
                 <button type="button" className="py-3.5 px-8 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-full border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 uppercase">I am an influencer</button>
-                <button type="button" className="md:ml-6 py-3.5 px-8 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-full border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 uppercase">I am an brand</button>
+                <button type="button" className="md:ml-6 py-3.5 px-8 me-2 mb-2 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-full border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 uppercase">I am brand</button>
             </div>
 
         </div>

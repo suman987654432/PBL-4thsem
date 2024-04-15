@@ -12,6 +12,9 @@ import Login from './components/auth/Login';
 import SignUp from './components/auth/Signup';
 import { useAuth } from './components/auth/context/AuthContext';
 import Shivam from './components/Shivam';
+import Success from './components/Pricing/Success';
+import Cancel from './components/Pricing/Cancel';
+import PaymentPage from './components/Pricing/PaymentPage';
 
 const App = () => {
  const location = useLocation();
@@ -34,6 +37,9 @@ const App = () => {
         <Route exact path="/resource" element={<ResourcePage />} />
         <Route exact path="/pricing" element={<PricingPage />} />
         <Route exact path="/shivam" element={<Shivam />} />
+        <Route exact path="/payment/:index" element={<PaymentPage />} />
+        <Route exact path="/success" element={<Success />} />
+        <Route exact path="/cancel" element={<Cancel />} />
       </Routes>
       {!isLoginOrSignup() && <Footer />}
     </>

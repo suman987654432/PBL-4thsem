@@ -1,6 +1,6 @@
 import React from 'react'
-import PriceCard from '../components/PriceCard'
 import HighlightContainer from '../components/HighlightContainer'
+import PriceCard from '../components/Pricing/PriceCard'
 
 const PricingPage = () => {
   return (

@@ -611,7 +611,9 @@ export const customerProfits = [
 export const plans = [
   {
     name: 'Intro',
-    price: 20,
+    plan: 'Intro',
+    price: 199,
+    discountedPrice: 149,
     features: [
       'All limited links',
       'Own analytics',
@@ -622,7 +624,9 @@ export const plans = [
   },
   {
     name: 'Basic',
-    price: 30,
+    plan: 'Basic',
+    price: 399,
+    discountedPrice: 299,
     features: [
       'All limited links',
       'Own analytics',
@@ -634,7 +638,9 @@ export const plans = [
   },
   {
     name: 'Pro',
-    price: 50,
+    plan: 'Pro',
+    price: 699,
+    discountedPrice: 499,
     features: [
       'All limited links',
       'Own analytics',
@@ -646,7 +652,9 @@ export const plans = [
   },
   {
     name: 'Enterprise',
-    price: 99,
+    plan: 'Enterprise',
+    price: 999,
+    discountedPrice: 799,
     features: [
       'All limited links',
       'Own analytics',
