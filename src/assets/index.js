@@ -114,6 +114,11 @@ import Campaign_icon from "./icons/Campaign_icon.svg"
 import better_insights_icon from "./icons/better_insights_icon.svg"
 import check_icon from "./icons/check.svg"
 
+import yt_logo from "./social_icons/yt_logo.png"
+import fb_logo from "./social_icons/fb_logo.png"
+import insta_logo from "./social_icons/insta_logo.png"
+import linkedIn_logo from "./social_icons/linkedIn_logo.png"
+
 export {
     brainwave,
     check,
@@ -219,6 +224,11 @@ export {
     efficiency_icon,
     Campaign_icon,
     better_insights_icon,
-    check_icon
+    check_icon,
+
+    yt_logo,
+    fb_logo,
+    insta_logo,
+    linkedIn_logo
 };
 

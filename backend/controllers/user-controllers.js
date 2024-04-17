@@ -1,4 +1,4 @@
-import User from "../models/User.js";
+import { User } from "../models/User.js";
 import { hash, compare } from "bcrypt";
 import { createToken } from "../utils/token-manager.js";
 import { COOKIE_NAME } from "../utils/constants.js";
@@ -9,9 +9,55 @@ const getAllUsers = async (req, res, next) => {
         return res.status(200).json({ message: "OK", users });
     } catch (error) {
         console.log(error);
-        return res.status(200).json({ message: "ERROR", cause: error.message }); 
+        return res.status(200).json({ message: "ERROR", cause: error.message });
     }
 };
+
+const profiles = async (req, res, next) => {
+    try {
+        const { name, bio, interests, socialDetails, about } = req.body;
+        const userId = res.locals.jwtData.id;
+
+        const user = await User.findById(userId);
+
+        if (!user) {
+            return res.status(404).send("User not found");
+        }
+
+        user.name = name;
+        user.bio = bio;
+        user.interests = interests;
+        user.socialDetails = socialDetails;
+        user.about = about;
+
+        await user.save();
+
+        // Send the updated user data along with the success message
+        return res.status(200).json({ 
+            message: "User profile updated successfully", 
+            user: user.toJSON() // Convert Mongoose document to JSON
+        });
+    } catch (error) {
+        console.log(error);
+        return res.status(500).json({ message: "Internal server error", error: error.message });
+    }
+};
+
+
+const getUserProfile = async (req, res, next) => {
+    try {
+        const userId = res.locals.jwtData.id;
+        const user = await User.findById(userId);
+        if (!user) {
+            return res.status(404).send("User not found");
+        }
+        return res.status(200).json({ user });
+    } catch (error) {
+        console.error(error);
+        return res.status(500).json({ message: "Internal server error", error: error.message });
+    }
+};
+
 
 const userSignup = async (req, res, next) => {
     try {
@@ -125,10 +171,13 @@ const userLogout = async (req, res, next) => {
     }
 };
 
+
 export {
     getAllUsers,
     userSignup,
     userLogin,
     verifyUser,
-    userLogout
+    userLogout,
+    profiles,
+    getUserProfile,
 };

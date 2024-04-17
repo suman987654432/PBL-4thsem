@@ -1,4 +1,5 @@
 import axios from "axios";
+import { useState } from "react";
 
 export const loginUser = async (email, password) => {
   const res = await axios.post("/user/login", { email, password });
@@ -36,12 +37,13 @@ export const sendChatRequest = async (message) => {
   return data;
 };
 
-export const getUserChats = async () => {
-  const res = await axios.get("/chat/all-chats");
+export const getUserUpdatedData = async () => {
+  const res = await axios.get("/user/profiles");
   if (res.status !== 200) {
     throw new Error("Unable to get user chats");
   }
   const data = await res.data;
+  console.log("Data received : ", data)
   return data;
 };
 

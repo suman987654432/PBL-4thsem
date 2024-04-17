@@ -50,7 +50,7 @@ const Support = () => {
             <div className="hidden lg:flex">
                 <div className="md:w-1/3">
                     {contents.map((content, index) => (
-                        <div className="flex justify-between p-4 bg-n-9/40 backdrop-blur border border-n-1/10 rounded-2xl gap-5 mb-2.5 mr-6 cursor-pointer" onClick={() => toggleVisibility(index)} >
+                        <div key={index} className="flex justify-between p-4 bg-n-9/40 backdrop-blur border border-n-1/10 rounded-2xl gap-5 mb-2.5 mr-6 cursor-pointer" onClick={() => toggleVisibility(index)} >
                         <h5 className="flex items-center pointer-events-none">
                             <img src={content.icon} alt={content.id} className={`${content.icon == calendar ? 'w-7' : 'w-8'} mr-3`} />
                             {content.title}

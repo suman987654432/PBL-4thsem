@@ -18,14 +18,17 @@ const Footer = () => {
 
         {footerData.map((column, index) => (
           <div key={index} className="w-full md:w-1/7 p-4">
-            <h3 className="font-medium mb-1">{column.title}</h3>
+            <h3 className="font-medium mb-1 pointer-events-none">{column.title}</h3>
             <ul>
               {column.items.map((item, itemIndex) => (
-                <li className="text-sm text-n-2/80 cursor-pointer hover:text-white" key={itemIndex}>{item}</li>
+                <li className="text-sm text-n-2/80 cursor-pointer hover:text-white" key={itemIndex}>
+                  <a href={item.url}>{item.name}</a>
+                </li>
               ))}
             </ul>
           </div>
         ))}
+
       </div>
 
       <p className="font-medium text-sm text-center py-3">Copyright &copy; StyleSync LLC {currentYear}</p>

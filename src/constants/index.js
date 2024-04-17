@@ -530,46 +530,44 @@ export const testimonials = [
 
 export const footerData = [
   {
-    title: "Who We Serve",
-    items: ["Brands", "Agencies"]
+     title: "Who We Serve",
+     items: [
+       { name: "Brands", url: "/brands" },
+       { name: "Agencies", url: "/agencies" }
+     ]
   },
   {
-    title: "Solutions",
-    items: [
-      "Find Influencers",
-      "Influencer Recruitment",
-      "Influencer Outreach",
-      "Manage Campaigns",
-      "Influencer Payments",
-      "Measure Results"
-    ]
+     title: "About",
+     items: [
+       { name: "Company", url: "/company" },
+       { name: "Aur Advantages", url: "/aur-advantages" }
+     ]
   },
   {
-    title: "About",
-    items: [
-      "Company",
-      "Careers",
-      "Aur Advantages"
-    ]
+     title: "Resources",
+     items: [
+       { name: "Blog", url: "/blog" },
+       { name: "eBooks", url: "/ebooks" },
+       { name: "Success Stories", url: "/success-stories" },
+       { name: "Influencer Marketing", url: "/influencer-marketing" }
+     ]
   },
   {
-    title: "Resources",
-    items: [
-      "Blog",
-      "eBooks",
-      "Success Stories",
-      "Influencer Marketing",
-    ]
+     title: "Pricing",
+     items: [
+       { name: "Shivam", url: "/shivam" }
+     ]
   },
   {
-    title: "Pricing",
-    items: ["Shivam"]
-  },
-  {
-    title: "Customers",
-    items: ["Contact Us", "Change Log", "Feature Request"]
+     title: "Customers",
+     items: [
+       { name: "Contact Us", url: "/contact-us" },
+       { name: "Change Log", url: "/change-log" },
+       { name: "Feature Request", url: "/feature-request" }
+     ]
   }
-];
+ ];
+ 
 
 export const customerProfits = [
   {
