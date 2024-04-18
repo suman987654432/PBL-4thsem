@@ -1,6 +1,5 @@
 import React from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
-
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Home from './pages/Home';
@@ -16,8 +15,8 @@ import Success from './components/Pricing/Success';
 import Cancel from './components/Pricing/Cancel';
 import PaymentPage from './components/Pricing/PaymentPage';
 import NotFound from './components/NotFound';
-import UserCard from './components/UserCard';
-import UserPage from './pages/UserPage';
+import User from './components/features/user/User';
+import UserCard from './components/features/user/UserCard';
 
 const App = () => {
  const location = useLocation();
@@ -43,7 +42,8 @@ const App = () => {
         <Route exact path="/payment/:index" element={<PaymentPage />} />
         <Route exact path="/success" element={<Success />} />
         <Route exact path="/cancel" element={<Cancel />} />
-        <Route exact path="/lg/home" element={<UserPage />} />
+        <Route exact path="/lg/home" element={<User />} />
+        <Route exact path="/lg/card" element={<UserCard />} />
         <Route path="/*" element={<NotFound />} />
       </Routes>
       {!isLoginOrSignup() && <Footer />}

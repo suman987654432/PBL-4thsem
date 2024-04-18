@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { fb_logo, insta_logo, linkedIn_logo, yt_logo } from '../assets';
+import { fb_logo, insta_logo, linkedIn_logo, yt_logo } from '../../../assets';
 
-const ProfileForm = ({ userData, onSubmit, onCancel }) => {
+const ProfileUpdateForm = ({ userData, onSubmit, onCancel }) => {
     const [name, setName] = useState('');
     const [bio, setBio] = useState('');
     const [interests, setInterests] = useState([]);
@@ -89,19 +89,21 @@ const ProfileForm = ({ userData, onSubmit, onCancel }) => {
                 </label>
                 {socialDetails.map((detail, index) => (
                     <div key={index} className="flex items-center space-x-2 mb-2">
-                        <div className="flex md:justify-start items-center gap-5">
+                        <div className="flex sm:w-56 md:justify-start items-center gap-5">
                             {plateforms.map((social) => (
                                 detail.href.includes(social.platform) && (
-                                    <img
-                                        key={social.platform}
-                                        className="w-12"
-                                        src={social.logo}
-                                        alt={social.alt}
-                                    />
+                                    <div key={social.alt}>
+                                        <img
+                                            key={social.platform}
+                                            className="w-12"
+                                            src={social.logo}
+                                            alt={social.alt}
+                                        />
+                                        <p className="hidden sm:flex w-1/4">{social.alt}</p>
+                                        </div>
                                 )
                             ))}
                         </div>
-                        <p className="hidden sm:flex w-1/4">{detail.alt}</p>
                         <input
                             type="text"
                             className="w-2/4 border rounded-md py-2 px-4 focus:outline-none sm:text-sm placeholder-gray-400/50 bg-n-5/50 border-n-5/80"
@@ -150,4 +152,4 @@ const ProfileForm = ({ userData, onSubmit, onCancel }) => {
     );
 }
 
-export default ProfileForm;
+export default ProfileUpdateForm;

@@ -1,36 +1,25 @@
 import React, { useState, useEffect } from 'react';
 import { PencilIcon } from '@heroicons/react/solid';
-import bg_image from "../assets/bg_image.jpeg"
-import { fb_logo, insta_logo, linkedIn_logo, yt_logo } from '../assets';
-import ProfileForm from '../components/ProfileForm';
-import axios from "axios"
+import bg_image from "../../../assets/bg_image.jpeg"
+import { fb_logo, insta_logo, linkedIn_logo, yt_logo } from '../../../assets';
+import ProfileForm from './ProfileUpdateForm';
+import { useDispatch, useSelector } from 'react-redux';
+import { getUserProfileAsync, updateUserProfileAsync, selectUserData } from '../userSlice';
 
-const UserPage = () => {
-
-    const [userData, setUserData] = useState({});
+const User = () => {
+    const dispatch = useDispatch();
+    const userData = useSelector(selectUserData);
     const [isFormVisible, setIsFormVisible] = useState(false);
 
     useEffect(() => {
-        const getUserProfile = async () => {
-            try {
-                const response = await axios.get('user/profile');
-                const userData = response.data.user;
-                setUserData(userData)
-                console.log("user profile:", userData);
-            } catch (error) {
-                console.error("Error fetching user profile:", error);
-            }
-        };
-
-        getUserProfile();
-    }, []);
+        dispatch(getUserProfileAsync());
+    }, [dispatch]);
 
     const handleFormSubmit = async (formData) => {
         try {
-            const response = await axios.post('/user/profiles', formData);
-            console.log('Profile updated successfully:', response.data.user);
-            setUserData(response.data.user);
-            setIsFormVisible(false)
+            await dispatch(updateUserProfileAsync(formData));
+            dispatch(getUserProfileAsync());
+            setIsFormVisible(false);
         } catch (error) {
             console.error('Error updating profile:', error);
         }
@@ -127,4 +116,4 @@ const UserPage = () => {
     );
 };
 
-export default UserPage;
+export default User;
