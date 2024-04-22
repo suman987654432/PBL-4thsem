@@ -23,6 +23,7 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true,
         unique: true,
+        
     },
     password: {
         type: String,
@@ -53,8 +54,8 @@ const profileSchema = new mongoose.Schema({
     ],
     about: { type: String }
 });
-// export default mongoose.model("User", userSchema);
-// // export default mongoose.model("Profile", profileSchema);
+
+userSchema.index({ email: 1 }, { unique: true });
 
 export const User = mongoose.model("User", userSchema);
 export const Profile = mongoose.model("Profile", profileSchema);

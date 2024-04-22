@@ -1,5 +1,4 @@
 import axios from "axios";
-import { useState } from "react";
 
 export const loginUser = async (email, password) => {
   const res = await axios.post("/user/login", { email, password });

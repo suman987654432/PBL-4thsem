@@ -13,7 +13,6 @@ export const AuthProvider = ({ children }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   useEffect(() => {
-    // fetch if the user's cookies are valid then skip login
     async function checkStatus() {
       const data = await checkAuthStatus();
       if (data) {

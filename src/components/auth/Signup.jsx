@@ -29,7 +29,7 @@ const SignUp = () => {
 
   useEffect(() => {
     if (auth?.user) {
-      navigate("/shivam");
+      navigate("/user/profile");
     }
   }, [auth]);
 

@@ -13,7 +13,7 @@ axios.defaults.withCredentials = true;
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
+  // <React.StrictMode>
     <Provider store={store}>
       <AuthProvider>
         <Router>
@@ -22,5 +22,6 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         </Router>
       </AuthProvider>
     </Provider>
-  </React.StrictMode>,
+  // </React.StrictMode>
+  ,
 )

@@ -25,8 +25,8 @@ const Login = () => {
   };
 
   useEffect(() => {
-    if (auth?.user) {
-      navigate("/shivam");
+    if (auth.isLoggedIn) {
+      navigate("/user/profile");
     }
   }, [auth]);
 
@@ -80,7 +80,7 @@ const Login = () => {
             </div>
             <button
               type="submit"
-              class="w-full mx-auto py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-900 rounded-full border border-white/50 hover:bg-gray-700/30 focus:z-10  dark:focus:ring-gray-700 dark:text-gray-400 "
+              className="w-full mx-auto py-2.5 px-5 me-2 mb-2 text-sm font-medium text-gray-900 rounded-full border border-white/50 hover:bg-gray-700/30 focus:z-10  dark:focus:ring-gray-700 dark:text-gray-400 "
             >
               Log In
             </button>

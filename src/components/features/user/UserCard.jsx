@@ -2,12 +2,15 @@ import React, { useEffect } from "react";
 import { useSelector, useDispatch } from 'react-redux';
 import { getAllUsersAsync, selectAllUsers } from "../userSlice";
 import { fb_logo, insta_logo, linkedIn_logo, yt_logo } from "../../../assets";
+import { useAuth } from "../../auth/context/AuthContext";
 
 const UserCard = () => {
+  const auth = useAuth();
+  console.log(auth)
   const dispatch = useDispatch();
   const users = useSelector(selectAllUsers);
 
-  useEffect(() => {
+  useEffect((e) => {
     dispatch(getAllUsersAsync());
   }, [dispatch]);
 
