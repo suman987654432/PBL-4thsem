@@ -22,7 +22,7 @@ const Footer = () => {
             <ul>
               {column.items.map((item, itemIndex) => (
                 <li className="text-sm text-n-2/80 cursor-pointer hover:text-white" key={itemIndex}>
-                  <a href={item.url}>{item.name}</a>
+                  <a href={item.url === '/feature-request' ? 'mailto:shivampatel9691@gmail.com?subject=Feature Request&body=I have a feature request for your application.' : `${item.url}`}>{item.name}</a>
                 </li>
               ))}
             </ul>

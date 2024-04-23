@@ -7,12 +7,14 @@ import Button from "./Button";
 import MenuSvg from "../assets/svg/MenuSvg";
 import { HamburgerMenu } from "./design/Header";
 import { useState } from "react";
+import { useAuth } from "./auth/context/AuthContext";
 
 const Header = () => {
- const pathname = useLocation().pathname; // Use pathname instead of hash
- const [openNavigation, setOpenNavigation] = useState(false);
+  const auth = useAuth();
+  const pathname = useLocation().pathname;
+  const [openNavigation, setOpenNavigation] = useState(false);
 
- const toggleNavigation = () => {
+  const toggleNavigation = () => {
     if (openNavigation) {
       setOpenNavigation(false);
       enablePageScroll();
@@ -20,16 +22,16 @@ const Header = () => {
       setOpenNavigation(true);
       disablePageScroll();
     }
- };
+  };
 
- const handleClick = () => {
+  const handleClick = () => {
     if (!openNavigation) return;
 
     enablePageScroll();
     setOpenNavigation(false);
- };
+  };
 
- return (
+  return (
     <div
       className={`fixed top-0 left-0 w-full z-50 border-b border-n-6 lg:bg-n-8/90 lg:backdrop-blur-sm ${openNavigation ? "bg-n-8" : "bg-n-8/90 backdrop-blur-sm"}`}
     >
@@ -57,15 +59,23 @@ const Header = () => {
           <HamburgerMenu />
         </nav>
 
-        <Link
+        {!auth.isLoggedIn && <Link
           to="/signup"
           className="button hidden mr-8 text-n-1/50 transition-colors hover:text-n-1 lg:block"
         >
           New account
-        </Link>
-        <Button className="hidden lg:flex" href="/login">
+        </Link>}
+        {!auth.isLoggedIn && <Button className="hidden lg:flex" href="/login">
           Sign in
-        </Button>
+        </Button>}
+
+        {auth.isLoggedIn && <Link
+          to="/"
+          className="button hidden mr-8 text-n-1/50 transition-colors hover:text-n-1 lg:block"
+          onClick={auth.logout}
+        >
+          <span className="h5 text-white">🔓</span> LogOut
+        </Link>}
 
         <Button
           className="ml-auto lg:hidden"
@@ -76,7 +86,7 @@ const Header = () => {
         </Button>
       </div>
     </div>
- );
+  );
 };
 
 export default Header;

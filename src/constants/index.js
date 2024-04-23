@@ -532,37 +532,42 @@ export const footerData = [
   {
      title: "Who We Serve",
      items: [
-       { name: "Brands", url: "/brands" },
-       { name: "Agencies", url: "/agencies" }
+       { name: "Brands", url: "/who-we-serve" },
+       { name: "Agencies", url: "/who-we-serve" }
+      //  { name: "Brands", url: "/brands" },
+      //  { name: "Agencies", url: "/agencies" }
      ]
   },
   {
      title: "About",
      items: [
-       { name: "Company", url: "/company" },
+       { name: "Company", url: "/about" },
        { name: "Aur Advantages", url: "/aur-advantages" }
      ]
   },
   {
      title: "Resources",
      items: [
-       { name: "Blog", url: "/blog" },
-       { name: "eBooks", url: "/ebooks" },
-       { name: "Success Stories", url: "/success-stories" },
-       { name: "Influencer Marketing", url: "/influencer-marketing" }
+      //  { name: "Blog", url: "/blog" },
+       { name: "eBooks", url: "/resource" },
+       { name: "Success Stories", url: "/resource" },
+       { name: "Influencer Marketing", url: "/resource" }
+      //  { name: "eBooks", url: "/ebooks" },
+      //  { name: "Success Stories", url: "/success-stories" },
+      //  { name: "Influencer Marketing", url: "/influencer-marketing" }
      ]
   },
   {
      title: "Pricing",
      items: [
-       { name: "Shivam", url: "/shivam" }
+       { name: "Pricing", url: "/pricing" }
      ]
   },
   {
      title: "Customers",
      items: [
        { name: "Contact Us", url: "/contact-us" },
-       { name: "Change Log", url: "/change-log" },
+      //  { name: "Change Log", url: "/change-log" },
        { name: "Feature Request", url: "/feature-request" }
      ]
   }

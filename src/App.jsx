@@ -15,6 +15,7 @@ import PaymentPage from './components/Pricing/PaymentPage';
 import NotFound from './components/NotFound';
 import User from './components/features/user/User';
 import UserCard from './components/features/user/UserCard';
+import OurAdvantage from './components/OurAdvantage';
 
 const App = () => {
   const location = useLocation();
@@ -33,6 +34,7 @@ const App = () => {
         <Route exact path="/who-we-serve" element={<Who_we_serve />} />
         <Route exact path="/resource" element={<ResourcePage />} />
         <Route exact path="/pricing" element={<PricingPage />} />
+        <Route exact path="/aur-advantages" element={<OurAdvantage />} />
         <Route exact path="/payment/:index" element={<PaymentPage />} />
         <Route exact path="/success" element={<Success />} />
         <Route exact path="/cancel" element={<Cancel />} />
